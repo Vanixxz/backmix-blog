@@ -24,8 +24,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>BackMix</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -88,20 +88,9 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/Vanixxz/BackMix" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -109,6 +98,17 @@
                     <span>Code</span>
                   </a>
                 </span>
+
+                <!-- Video link -->
+                <span class="link-block">
+                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
@@ -139,7 +139,7 @@
           <p>
             Open set recognition (OSR) requires models to classify known samples while detecting unknown samples for real-world applications. Existing studies show impressive progress using unknown samples from auxiliary datasets to regularize OSR models, but they have proved to be sensitive to selecting such known outliers. 
             In this paper, we discuss the aforementioned problem from a new perspective: Can we regularize OSR models without elaborately selecting auxiliary known outliers?
-            We first empirically and theoretically explore the role of foregrounds and backgrounds in open set recognition and disclose that: 1) backgrounds that correlate with foregrounds would mislead the model and cause failures when encounters `partially' known images; 2) Backgrounds unrelated to foregrounds can serve as auxiliary known outliers and provide regularization via global average pooling. Based on the above insights, we propose a new method, Background Mix (BackMix), that mixes the foreground of an image with different backgrounds to remove the underlying fore-background priors. Specifically, BackMix first estimates the foreground with class activation maps (CAMs), then randomly replaces image patches with backgrounds from other images to obtain mixed images for training. With backgrounds de-correlated from foregrounds, the open set recognition performance is significantly improved. The proposed method is quite simple to implement, requires no extra operation for inferences, and can be seamlessly integrated into almost all of the existing frameworks.
+            We first empirically and theoretically explore the role of foregrounds and backgrounds in open set recognition and disclose that: 1) backgrounds that correlate with foregrounds would mislead the model and cause failures when encounters 'partially' known images; 2) Backgrounds unrelated to foregrounds can serve as auxiliary known outliers and provide regularization via global average pooling. Based on the above insights, we propose a new method, Background Mix (BackMix), that mixes the foreground of an image with different backgrounds to remove the underlying fore-background priors. Specifically, BackMix first estimates the foreground with class activation maps (CAMs), then randomly replaces image patches with backgrounds from other images to obtain mixed images for training. With backgrounds de-correlated from foregrounds, the open set recognition performance is significantly improved. The proposed method is quite simple to implement, requires no extra operation for inferences, and can be seamlessly integrated into almost all of the existing frameworks.
           </p>
         </div>
       </div>

@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      .moving-image-container {
+          width: 150%;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          background-color: #ffffff;
+      }
+
+      .moving-image {
+          position: absolute;
+          left: 0;
+          transform: translateY(-0%);
+          width: 2000px; 
+          animation: moveHorizontal 20s linear infinite; 
+      }
+
+      .moving-image.second {
+          left: 2000px; 
+      }
+
+      @keyframes moveHorizontal {
+          0% {
+              transform: translateX(0);
+          }
+          100% {
+              transform: translateX(-2000px); 
+          }
+      }
+  </style>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
@@ -56,7 +92,7 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://wangyutju.github.io/" target="_blank">Yu Wang</a>,</span>
+                <a href="https://faculty.tju.edu.cn/wangyu_ai/zh_CN/index.htm" target="_blank">Yu Wang</a>,</span>
                 <span class="author-block">
                 <a href="https://github.com/Vanixxz" target="_blank">Junxian Mu</a>,</span>
                 <span class="author-block">
@@ -79,7 +115,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10923742" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -99,20 +135,31 @@
                   </a>
                 </span>
 
-                <!-- Video link -->
-                <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-video"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
+              <!-- Video link -->
+              <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <span>YouTube</span>
+              </a>
+            </span>
+            
+              <!-- Video link -->
+              <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-video"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2503.17717" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -129,11 +176,54 @@
 </section>
 
 
+<div class="moving-image-container">
+  <img src="static/images/processed.png" alt="processed_image" class="moving-image">
+  <img src="static/images/processed.png" alt="processed_image" class="moving-image second">
+</div>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+          <h2>
+            <h2 style="font-size: 32px;"> <b>Summary</b> <img src="static/images/summary.png" width="50"> </h2>
+          </h2>
+
+          <div class="content has-text-justified">
+              <p>
+                  <ul>
+                      <li><b>
+                        We thoroughly discuss the <span style="color: #00549F;">role of fore-background priors</span> and demonstrate that the 
+                        <span style="color: #00549F;">fore-background priors can mislead the model in OSR</span>. This issue can be resolved by 
+                        <span style="color: #00549F;">releasing the correlation between foreground and background</span> during training.
+                        </b></li>
+                      <br>
+                      <li><b>
+                        We provide insights into the <span style="color: #00549F;">regularization effect of class-unrelated backgrounds</span>, which can enhance open
+                        set performance by serving as outliers. Moreover, the <span style="color: #00549F;">internal regularization mechanism is as effective as well designed auxiliary data-based methods</span>.
+                      </b></li>
+                      <br>
+                      <li><b>
+                        We propose BackMix that involves <span style="color: #00549F;">rough foreground estimation</span> using CAMs and <span style="color: #00549F;">mixing up backgrounds</span> from different images to release the inherent correlation.
+                      </b></li>
+                      <br>
+                      <li><b>
+                        BackMix is <span style="color: #00549F;">simple to implement and can be seamlessly integrated into other methods</span>. Experimental results show
+                        that <span style="color: #00549F;">BackMix significantly improves conventional and state-of-the-art OSR methods by up to 23.6%</span> on the AUROC, even enhancing the plain baseline to outperform advanced methods.
+                      </b></li>
+                  </ul>
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-six-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -147,6 +237,24 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@ARTICLE{wang2025backmix,
+      author={Wang, Yu and Mu, Junxian and Huang, Hongzhi and Wang, Qilong and Zhu, Pengfei and Hu, Qinghua},
+      journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+      title={BackMix: Regularizing Open Set Recognition by Removing Underlying Fore-Background Priors}, 
+      year={2025},
+      pages={1-12},
+      doi={10.1109/TPAMI.2025.3550703}
+    }
+    </code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
 
 
   <footer class="footer">

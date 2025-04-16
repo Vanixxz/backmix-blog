@@ -296,6 +296,379 @@
 <!-- End Method Section -->
 
 
+<!-- Experiments Section -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+      <div class="column is-six-fifths">
+    <div class="columns is-centered has-text-centered">
+      <h2 style="font-size: 32px;"> <b>Experiments</b> <img src="static/images/exp.png" width="50"> </h2>
+    </div>
+          <div class="compact-research-table">
+            <div class="table-wrapper">
+              <table>
+                <em>Table 1: AUROC score comparison of different OSR methods in unknown detection tasks. All results are averages over five random splits.</em>
+                <thead>
+                  <tr>
+                    <th class="method-col">Method</th>
+                    <th>SVHN</th>
+                    <th>CIFAR10</th>
+                    <th>CIFAR+10</th>
+                    <th>CIFAR+50</th>
+                    <th>Tiny-ImageNet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Baseline Methods -->
+                  <tr>
+                    <td>OSRCI</td>
+                    <td>91.0</td>
+                    <td>69.9</td>
+                    <td>83.8</td>
+                    <td>82.7</td>
+                    <td>58.6</td>
+                  </tr>
+                  <tr>
+                    <td>CROSR</td>
+                    <td>89.9</td>
+                    <td>88.3</td>
+                    <td>91.2</td>
+                    <td>90.5</td>
+                    <td>58.9</td>
+                  </tr>
+                  <tr>
+                    <td>C2AE</td>
+                    <td>92.2</td>
+                    <td>89.5</td>
+                    <td>95.5</td>
+                    <td>93.7</td>
+                    <td>74.8</td>
+                  </tr>
+                  <tr>
+                    <td>CGDL</td>
+                    <td>93.5</td>
+                    <td>90.3</td>
+                    <td>95.9</td>
+                    <td>95.0</td>
+                    <td>76.2</td>
+                  </tr>
+                  <tr>
+                    <td>GDFR</td>
+                    <td>93.5</td>
+                    <td>83.1</td>
+                    <td>91.5</td>
+                    <td>91.3</td>
+                    <td>64.7</td>
+                  </tr>
+                  <tr>
+                    <td>PROSER</td>
+                    <td>94.3</td>
+                    <td>89.1</td>
+                    <td>96.0</td>
+                    <td>95.3</td>
+                    <td>69.3</td>
+                  </tr>
+
+                  <tr>
+                    <td>Plain*</td>
+                    <td>88.6</td>
+                    <td>67.7</td>
+                    <td>81.6</td>
+                    <td>80.5</td>
+                    <td>57.7</td>
+                  </tr>
+                  <tr class="enhanced">
+                    <td class="indented">+BackMix</td>
+                    <td><span class="imp_msp">97.0<sup>+8.4</sup></span></td>
+                    <td><span class="imp_msp">91.3<sup>+23.6</sup></span></td>
+                    <td><span class="imp_msp">91.9<sup>+10.3</sup></span></td>
+                    <td><span class="imp_msp">91.6<sup>+11.1</sup></span></td>
+                    <td><span class="imp_msp">80.4<sup>+22.7</sup></span></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>ARPL</td>
+                    <td>95.3</td>
+                    <td>89.8</td>
+                    <td>91.3</td>
+                    <td>90.8</td>
+                    <td>76.0</td>
+                  </tr>
+                  <tr class="enhanced arpl">
+                    <td class="indented">+BackMix</td>
+                    <td><span class="imp_arpl">96.4<sup>+1.1</sup></span></td>
+                    <td><span class="imp_arpl">91.0<sup>+1.2</sup></span></td>
+                    <td><span class="imp_arpl">93.4<sup>+2.1</sup></span></td>
+                    <td><span class="imp_arpl">92.3<sup>+1.5</sup></span></td>
+                    <td><span class="imp_arpl">76.3<sup>+0.3</sup></span></td>
+                  </tr>
+
+                  <tr>
+                    <td>CSSR</td>
+                    <td>96.7</td>
+                    <td>90.7</td>
+                    <td>91.5</td>
+                    <td>90.9</td>
+                    <td>80.6</td>
+                  </tr>
+                  <tr class="enhanced cssr">
+                    <td class="indented">+BackMix</td>
+                    <td><span class="imp_cssr">97.7<sup>+1.0</sup></span></td>
+                    <td><span class="imp_cssr">94.2<sup>+3.5</sup></span></td>
+                    <td><span class="imp_cssr">96.4<sup>+4.9</sup></span></td>
+                    <td><span class="imp_cssr">95.7<sup>+4.8</sup></span></td>
+                    <td><span class="imp_cssr">83.1<sup>+2.5</sup></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <table>
+            <em>Table 2: Comparision for distinguishing in-distribution dataset CIFAR10 from near out-of-distribution dataset CIFAR100 and far out-of-distribution dataset SVHN.</em>
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="4">In:CIFAR10 / Out:CIFAR100</th>
+                <th colspan="4">In:CIFAR10 / Out:SVHN</th>
+              </tr>
+              <tr>
+                <th>DTACC</th>
+                <th>AUROC</th>
+                <th>AUIN</th>
+                <th>AUOUT</th>
+                <th>DTACC</th>
+                <th>AUROC</th>
+                <th>AUIN</th>
+                <th>AUOUT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GCPL</td>
+                <td>80.2</td>
+                <td>86.4</td>
+                <td>86.6</td>
+                <td>84.1</td>
+                <td>86.1</td>
+                <td>91.3</td>
+                <td>86.6</td>
+                <td>94.8</td>
+              </tr>
+              <tr>
+                <td>RPL</td>
+                <td>80.6</td>
+                <td>87.1</td>
+                <td>88.8</td>
+                <td>83.8</td>
+                <td>87.1</td>
+                <td>92.0</td>
+                <td>89.6</td>
+                <td>95.1</td>
+              </tr>
+              <tr>
+                <td>CSI</td>
+                <td>84.4</td>
+                <td>91.6</td>
+                <td>92.5</td>
+                <td>90.0</td>
+                <td>92.8</td>
+                <td>97.9</td>
+                <td>96.2</td>
+                <td>99.0</td>
+              </tr>
+              <tr>
+                <td>OpenGAN</td>
+                <td>84.2</td>
+                <td>89.7</td>
+                <td>87.7</td>
+                <td>89.6</td>
+                <td>92.1</td>
+                <td>95.9</td>
+                <td>93.4</td>
+                <td>97.1</td>
+              </tr>
+              <tr>
+                <td>Plain*</td>
+                <td>79.8</td>
+                <td>86.3</td>
+                <td>88.4</td>
+                <td>82.5</td>
+                <td>86.4</td>
+                <td>90.6</td>
+                <td>88.3</td>
+                <td>93.6</td>
+              </tr>
+              <tr class="enhanced">
+                <td class="indented">+BackMix</td>
+                <td><span class="imp_msp">84.9<sup>+5.1</sup></span></td>
+                <td><span class="imp_msp">91.3<sup>+5.0</sup></span></td>
+                <td><span class="imp_msp">93.0<sup>+4.6</sup></span></td>
+                <td><span class="imp_msp">88.1<sup>+5.6</sup></span></td>
+                <td><span class="imp_msp">88.5<sup>+2.1</sup></span></td>
+                <td><span class="imp_msp">94.1<sup>+3.5</sup></span></td>
+                <td><span class="imp_msp">93.5<sup>+5.2</sup></span></td>
+                <td><span class="imp_msp">97.5<sup>+3.9</sup></span></td>
+              </tr>
+              <tr>
+                <td>ARPL</td>
+                <td>80.8</td>
+                <td>88.2</td>
+                <td>90.4</td>
+                <td>84.4</td>
+                <td>82.8</td>
+                <td>90.5</td>
+                <td>84.6</td>
+                <td>95.3</td>
+              </tr>
+              <tr class="enhanced arpl">
+                <td class="indented">+BackMix</td>
+                <td><span class="imp_arpl">84.0<sup>+3.2</sup></span></td>
+                <td><span class="imp_arpl">91.1<sup>+2.9</sup></span></td>
+                <td><span class="imp_arpl">92.1<sup>+1.7</sup></span></td>
+                <td><span class="imp_arpl">89.0<sup>+4.6</sup></span></td>
+                <td><span class="imp_arpl">94.9<sup>+12.1</sup></span></td>
+                <td><span class="imp_arpl">98.5<sup>+8.0</sup></span></td>
+                <td><span class="imp_arpl">97.6<sup>+13.0</sup></span></td>
+                <td><span class="imp_arpl">99.1<sup>+3.8</sup></span></td>
+              </tr>
+              <tr>
+                <td>CSSR</td>
+                <td>83.1</td>
+                <td>90.3</td>
+                <td>91.3</td>
+                <td>87.8</td>
+                <td>94.1</td>
+                <td>98.1</td>
+                <td>97.1</td>
+                <td>98.2</td>
+              </tr>
+              <tr class="enhanced cssr">
+                <td class="indented">+BackMix</td>
+                <td><span class="imp_cssr">86.3<sup>+3.2</sup></span></td>
+                <td><span class="imp_cssr">93.0<sup>+2.7</sup></span></td>
+                <td><span class="imp_cssr">93.7<sup>+2.4</sup></span></td>
+                <td><span class="imp_cssr">91.7<sup>+3.9</sup></span></td>
+                <td><span class="imp_cssr">96.4<sup>+2.3</sup></span></td>
+                <td><span class="imp_cssr">99.2<sup>+1.1</sup></span></td>
+                <td><span class="imp_cssr">98.4<sup>+1.3</sup></span></td>
+                <td><span class="imp_cssr">99.6<sup>+1.4</sup></span></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </section>
+<!-- End Expeiments Section -->
+
+<style>
+  .compact-research-table {
+    margin: 1rem auto;
+    max-width: 780px;
+    font-size: 1rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    padding: 0 0.5rem;
+    background-color: white;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5rem 0;
+    table-layout: fixed;
+  }
+  
+  th, td {
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+  
+  .method-col {
+    text-align: left;
+    width: 120px;
+    font-size: 1rem;
+  }
+  
+  .section-divider td {
+    height: 0.3rem;
+    background-color: #f8f9fa;
+    border: none;
+  }
+  
+  .enhanced {
+    background-color: #f0f7ff;
+  }
+  
+  .arpl {
+    background-color: #f5f4e8;
+  }
+
+  .cssr {
+    background-color: #e8f5e9;
+  }
+  
+  .indented {
+    padding-left: 1rem !important;
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .imp_msp {
+    color: #1976d2;
+    font-weight: 600;
+  }
+  
+  .imp_arpl {
+    color: #86420a;
+    font-weight: 600;
+  }
+
+  .imp_cssr {
+    color: #388e3c;
+    font-weight: 600;
+  }
+  
+  sup {
+    font-size: 0.6rem;
+    color: #666;
+    margin-left: 0.1rem;
+  }
+  
+  .table-footer {
+    padding: 0.5rem 0.8rem;
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  @media (max-width: 640px) {
+    .compact-research-table {
+      font-size: 1rem;
+    }
+    
+    th, td {
+      padding: 0.3rem 0.4rem;
+    }
+    
+    .method-col {
+      width: 80px;
+    }
+  }
+</style>
+
+
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -314,7 +687,7 @@
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">

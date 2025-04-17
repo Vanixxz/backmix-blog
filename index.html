@@ -674,10 +674,36 @@
           </tr>
         </tbody>
       </table>
+      <h2>
+        <h2 style="font-size: 24px; margin: 20px 0px;"> <b>C. Visualization 🔍</b> </h2>
+      </h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/masks.jpg" alt="MY ALT TEXT" style="width: auto; height: 300px;"/>
+          <h2 class="subtitle has-text-centered" style="font-size: 14px; text-align: left; margin-top: 5px;">
+            <i>Figure 1: Examples of the estimated foreground masks, and labels have been annotated below the corresponding image. The rough segmentation using CAM can effectively estimate the foreground.</i>
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/mixed.jpg" alt="MY ALT TEXT" style="width: auto; height: 300px;"/>
+          <h2 class="subtitle has-text-centered" style="font-size: 14px; text-align: left; margin-top: 5px;">
+            <i>Figure 2: Examples of the BackMix processed images. The pasted background patches contain almost no foreground objects from another image. By setting a reasonable cut size, we can ensure that the processed training samples retain sufficient information about the classification object in the target image.</i>
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/cam.jpg" alt="MY ALT TEXT" style="width: auto; height: 300px;"/>
+          <h2 class="subtitle has-text-centered" style="font-size: 14px; text-align: left; margin-top: 5px;">
+            <i>Figure 3: Comparison of Grad-CAM results on the ImageNet1K dataset using different data augmentation methods.</i>
+          </h2>
+        </div>
+      </div>
+    </div>
+    </div>
     </div>
   </div>
   </section>
 <!-- End Expeiments Section -->
+
 
 <style>
   .compact-research-table {
@@ -790,6 +816,13 @@
     .method-col {
       width: 80px;
     }
+  }
+  .item {
+    text-align: center; 
+  }
+  .item img {
+    display: inline-block;
+    width: auto;
   }
 </style>
 

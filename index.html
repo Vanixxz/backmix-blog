@@ -557,8 +557,122 @@
               </tr>
             </tbody>
           </table>
+          <div class="compact-research-table-1">
+            <table>
+            <em>Table 3: The transferability of backbones pretrained using BackMix and other data augmentation methods on multiple visual downstream tasks with different methods.</em>
+            <thead>
+              <tr>
+                <th rowspan="3">Augmentation</th>
+                <th colspan="2">Object Detection</th>
+                <th colspan="2">Image Captioning</th>
+              </tr>
+              <tr>
+                <th>SSD (mAP)</th>
+                <th>Faster-RCNN (mAP)</th>
+                <th>NIC (BLEU-1)</th>
+                <th>NIC (BLEU-4)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Plain*</td>
+                <td>76.7</td>
+                <td>75.6</td>
+                <td>61.4</td>
+                <td>22.9</td>
+              </tr>
+              <tr>
+                <td class="indented">+Mixup</td>
+                <td>76.6<sup>-0.1</sup></td>
+                <td>73.9<sup>-1.7</sup></td>
+                <td>61.6<sup>+0.2</sup></td>
+                <td>23.2<sup>+0.3</sup></td>
+              </tr>
+              <tr>
+                <td class="indented">+Cutout</td>
+                <td>76.8<sup>+0.1</sup></td>
+                <td>75.0<sup>-0.6</sup></td>
+                <td>63.0<sup>+1.6</sup></td>
+                <td>24.0<sup>+1.1</sup></td>
+              </tr>
+              <tr>
+                <td class="indented">+Cutmix</td>
+                <td>77.6<sup>+0.9</sup></td>
+                <td>76.7<sup>+1.1</sup></td>
+                <td>64.2<sup>+2.8</sup></td>
+                <td>24.9<sup>+2.0</sup></td>
+              </tr>
+                <tr class="enhanced">
+                  <td class="indented">+BackMix</td>
+                <td><span class="imp_msp">77.9<sup>+1.2</sup></span></td>
+                <td><span class="imp_msp">77.1<sup>+1.5</sup></span></td>
+                <td><span class="imp_msp">68.5<sup>+7.1</sup></span></td>
+                <td><span class="imp_msp">25.6<sup>+2.7</sup></span></td>
+              </tr>
+            </tbody>
+          </table>
       </div>
+          <div class="compact-research-table-1">
+            <table>
+        <em>Table 4: OOD detection performance of BackMix in the finetuning stage. We used CIFAR10 as the in-distribution dataset and CIFAR100 as the OOD dataset.</em>
+        <thead>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th colspan="2">1-shot</th>
+            <th colspan="2">4-shot</th>
+            <th colspan="2">16-shot</th>
+          </tr>
+          <tr>
+            <th>Accuracy</th>
+            <th>AUROC</th>
+            <th>Accuracy</th>
+            <th>AUROC</th>
+            <th>Accuracy</th>
+            <th>AUROC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CoOp</td>
+            <td>89.8</td>
+            <td>91.6</td>
+            <td>90.6</td>
+            <td>91.5</td>
+            <td>91.2</td>
+            <td>91.1</td>
+          </tr>
+            <tr class="enhanced">
+              <td class="indented">+BackMix</td>
+            <td><span class="imp_msp">90.7<sup>+0.9</sup></span></td>
+            <td><span class="imp_msp">92.1<sup>+0.5</sup></span></td>
+            <td><span class="imp_msp">91.3<sup>+0.7</sup></span></td>
+            <td><span class="imp_msp">92.1<sup>+0.6</sup></span></td>
+            <td><span class="imp_msp">91.7<sup>+0.5</sup></span></td>
+            <td><span class="imp_msp">91.6<sup>+0.5</sup></span></td>
+          </tr>
+          <tr>
+            <td>LoCoOp</td>
+            <td>89.6</td>
+            <td>91.2</td>
+            <td>89.8</td>
+            <td>91.4</td>
+            <td>91.4</td>
+            <td>90.4</td>
+          </tr>
+            <tr class="enhanced">
+              <td class="indented">+BackMix</td>
+            <td><span class="imp_msp">90.7<sup>+1.1</sup></span></td>
+            <td><span class="imp_msp">91.6<sup>+0.4</sup></span></td>
+            <td><span class="imp_msp">90.9<sup>+1.1</sup></span></td>
+            <td><span class="imp_msp">91.9<sup>+0.5</sup></span></td>
+            <td><span class="imp_msp">91.7<sup>+0.3</sup></span></td>
+            <td><span class="imp_msp">91.0<sup>+0.6</sup></span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    </div>
+  </div>
   </section>
 <!-- End Expeiments Section -->
 
@@ -566,6 +680,12 @@
   .compact-research-table {
     margin: 1rem auto;
     max-width: 780px;
+    font-size: 1rem;
+  }
+
+  .compact-research-table-1 {
+    margin: 1rem auto;
+    max-width: 840px;
     font-size: 1rem;
   }
 
